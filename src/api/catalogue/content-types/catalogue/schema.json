@@ -1,0 +1,120 @@
+{
+  "kind": "collectionType",
+  "collectionName": "catalogues",
+  "info": {
+    "singularName": "catalogue",
+    "pluralName": "catalogues",
+    "displayName": "Catalogues",
+    "description": "Ajouter un catalogue fournisseur"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nom du fournisseur": {
+      "type": "string"
+    },
+    "Annee": {
+      "type": "string"
+    },
+    "Marque": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Ancor",
+        "Apli-Agipa",
+        "Bic",
+        "Canson",
+        "Casio",
+        "CEP",
+        "Colart",
+        "Conquérant",
+        "Dymo",
+        "Elve",
+        "Esselte",
+        "Exacompta",
+        "Faber-Castell",
+        "Fabriano",
+        "GBC",
+        "Giotto",
+        "Global Notes",
+        "GPV",
+        "Hexis",
+        "Maped",
+        "Nobo",
+        "Oxford",
+        "Pebeo",
+        "Pentel",
+        "Pilot",
+        "QuoVadis",
+        "Rapid",
+        "Rexel",
+        "Rhodia",
+        "Romeo & Maestri",
+        "Sicad Group",
+        "Staedtler",
+        "Tesa",
+        "Trodat",
+        "Waterman / Parker",
+        "Wonday"
+      ]
+    },
+    "Document": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "CoverSupplierDefault": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "CoverSquareby3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "CoverSquareby2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "CoverRectangle": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Cover620": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "CoverSquareby3Full": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
