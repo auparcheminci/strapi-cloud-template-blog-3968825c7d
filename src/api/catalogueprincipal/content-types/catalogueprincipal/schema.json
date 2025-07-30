@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cataloguesprincipaux",
+  "info": {
+    "singularName": "catalogueprincipal",
+    "pluralName": "cataloguesprincipaux",
+    "displayName": "Catalogue principal",
+    "description": "Ajouter un catalogue fournisseur"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+ "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Document": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Maj": {
+      "type": "string"
+    }
+  }
+}
