@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projets",
+  "info": {
+    "singularName": "projet",
+    "pluralName": "projets",
+    "displayName": "Projets",
+    "description": "Ajouter un projet aux réalisations"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Rectangle": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+     "Square": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+   "Categories": {
+      "type": "enumeration",
+      "enum": [
+        "Mobilier de bureaux",
+        "Vestiaires",
+        "Stockages et Archivages"
+      ]
+    }
+  }
+}
