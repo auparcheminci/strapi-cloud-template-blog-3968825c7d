@@ -60,6 +60,21 @@
         "Wonday"
       ]
     },
+    "Gamme": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "Fournitures Scolaires",
+        "Fournitures de Bureau",
+        "Mobilier de Bureau",
+        "Tout Types de Papiers & Cartons",
+        "Solutions d'Archivages et de Stockages",
+        "Support d'Impressions Numériques"
+      ],
+      "min": 1,
+      "required": true
+    },
     "Document": {
       "type": "media",
       "multiple": false,
