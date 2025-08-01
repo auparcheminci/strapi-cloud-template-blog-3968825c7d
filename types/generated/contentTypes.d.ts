@@ -373,35 +373,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutAbout extends Struct.SingleTypeSchema {
-  collectionName: 'abouts';
-  info: {
-    description: 'Write about yourself and the content you create';
-    displayName: 'About';
-    pluralName: 'abouts';
-    singularName: 'about';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiCatalogueCatalogue extends Struct.CollectionTypeSchema {
   collectionName: 'catalogues';
   info: {
@@ -413,18 +384,319 @@ export interface ApiCatalogueCatalogue extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: false;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Annee: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Cover620: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CoverRectangle: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CoverSquareby2: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CoverSquareby3: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CoverSquareby3Full: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CoverSupplierDefault: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Document: Schema.Attribute.Media<'files'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Gamme: Schema.Attribute.JSON &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Fournitures Scolaires',
+          'Fournitures de Bureau',
+          'Mobilier de Bureau',
+          'Tout Types de Papiers & Cartons',
+          "Solutions d'Archivages et de Stockages",
+          "Support d'Impressions Num\u00E9riques",
+        ]
+      > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<'[]'>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::catalogue.catalogue'
+    >;
+    Marque: Schema.Attribute.Enumeration<
+      [
+        'Ancor',
+        'Apli-Agipa',
+        'Bic',
+        'Canson',
+        'Casio',
+        'CEP',
+        'Colart',
+        'Conqu\u00E9rant',
+        'Dymo',
+        'Elve',
+        'Esselte',
+        'Exacompta',
+        'Faber-Castell',
+        'Fabriano',
+        'GBC',
+        'Giotto',
+        'Global Notes',
+        'GPV',
+        'Hexis',
+        'Maped',
+        'Nobo',
+        'Oxford',
+        'Pebeo',
+        'Pentel',
+        'Pilot',
+        'QuoVadis',
+        'Rapid',
+        'Rexel',
+        'Rhodia',
+        'Romeo & Maestri',
+        'Sicad Group',
+        'Staedtler',
+        'Tesa',
+        'Trodat',
+        'Waterman / Parker',
+        'Wonday',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Nomdufournisseur: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCatalogueprincipalCatalogueprincipal
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'cataloguesprincipaux';
+  info: {
+    description: 'Ajouter un catalogue fournisseur';
+    displayName: 'Catalogue principal';
+    pluralName: 'cataloguesprincipaux';
+    singularName: 'catalogueprincipal';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    Document: Schema.Attribute.Media<'files'>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::catalogue.catalogue'
-    > &
-      Schema.Attribute.Private;
-    NomFournisseur: Schema.Attribute.String;
+      'api::catalogueprincipal.catalogueprincipal'
+    >;
+    Maj: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCatalogueprincipalbureauCatalogueprincipalbureau
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'cataloguesprincipauxbureaux';
+  info: {
+    description: 'Ajouter un catalogue Bureau';
+    displayName: 'Catalogue principal Bureau';
+    pluralName: 'cataloguesprincipauxbureaux';
+    singularName: 'catalogueprincipalbureau';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    document_arch: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    document_arm: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    document_cha: Schema.Attribute.Media<'files'>;
+    document_kamos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    document_merryfair: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    document_mob: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    document_ref: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    document_vest: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::catalogueprincipalbureau.catalogueprincipalbureau'
+    >;
+    Maj: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGalerieGalerie extends Struct.CollectionTypeSchema {
+  collectionName: 'galeries';
+  info: {
+    description: "Ajouter une photo \u00E0 la galerie d'images";
+    displayName: 'Galeries photos';
+    pluralName: 'galeries';
+    singularName: 'galerie';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::galerie.galerie'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    Rectangle: Schema.Attribute.Media<'images'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLasocieteLasociete extends Struct.SingleTypeSchema {
+  collectionName: 'lasocietes';
+  info: {
+    description: 'D\u00E9crivez la soci\u00E9t\u00E9 Au Parchemin';
+    displayName: 'Biographie';
+    pluralName: 'lasocietes';
+    singularName: 'lasociete';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::lasociete.lasociete'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -442,23 +714,44 @@ export interface ApiProjetProjet extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: false;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     Categories: Schema.Attribute.Enumeration<
       ['Mobilier de bureaux', 'Vestiaires', 'Stockages et Archivages']
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::projet.projet'
-    > &
-      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::projet.projet'>;
     publishedAt: Schema.Attribute.DateTime;
-    Rectangle: Schema.Attribute.Media<'images'>;
-    Square: Schema.Attribute.Media<'images'>;
-    Title: Schema.Attribute.String;
+    Rectangle: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Square: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -974,8 +1267,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::about.about': ApiAboutAbout;
       'api::catalogue.catalogue': ApiCatalogueCatalogue;
+      'api::catalogueprincipal.catalogueprincipal': ApiCatalogueprincipalCatalogueprincipal;
+      'api::catalogueprincipalbureau.catalogueprincipalbureau': ApiCatalogueprincipalbureauCatalogueprincipalbureau;
+      'api::galerie.galerie': ApiGalerieGalerie;
+      'api::lasociete.lasociete': ApiLasocieteLasociete;
       'api::projet.projet': ApiProjetProjet;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

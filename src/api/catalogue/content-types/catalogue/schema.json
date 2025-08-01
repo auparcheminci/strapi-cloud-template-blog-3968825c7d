@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "Nom du fournisseur": {
+    "Nomdufournisseur": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
