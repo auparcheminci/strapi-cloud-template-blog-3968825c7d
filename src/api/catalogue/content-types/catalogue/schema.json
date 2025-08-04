@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "Nomdufournisseur": {
+    "nomdufournisseur": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -24,7 +24,7 @@
         }
       }
     },
-    "Annee": {
+    "annee": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -32,7 +32,7 @@
         }
       }
     },
-    "Marque": {
+    "marque": {
       "type": "enumeration",
       "pluginOptions": {
         "i18n": {
