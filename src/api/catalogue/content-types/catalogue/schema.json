@@ -79,7 +79,7 @@
         "Wonday"
       ]
     },
-    "Gamme": {
+    "gamme": {
       "type": "customField",
       "pluginOptions": {
         "i18n": {
@@ -99,7 +99,7 @@
       "min": 1,
       "required": true
     },
-    "Document": {
+    "document": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -112,7 +112,7 @@
         "files"
       ]
     },
-    "CoverSupplierDefault": {
+    "coversupplierdefault": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -125,7 +125,7 @@
         "images"
       ]
     },
-    "CoverSquareby3": {
+    "coversquareby3": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -138,7 +138,7 @@
         "images"
       ]
     },
-    "CoverSquareby2": {
+    "coversquareby2": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -151,7 +151,7 @@
         "images"
       ]
     },
-    "CoverRectangle": {
+    "coverrectangle": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -164,7 +164,7 @@
         "images"
       ]
     },
-    "Cover620": {
+    "cover620": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -177,7 +177,7 @@
         "images"
       ]
     },
-    "CoverSquareby3Full": {
+    "coversquareby3full": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
