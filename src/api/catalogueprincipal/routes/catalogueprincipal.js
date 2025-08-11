@@ -6,4 +6,4 @@
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::catalogue.catalogue');
+module.exports = createCoreRouter('api::catalogueprincipal.catalogueprincipal');
