@@ -390,43 +390,43 @@ export interface ApiCatalogueCatalogue extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    Annee: Schema.Attribute.String &
+    annee: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Cover620: Schema.Attribute.Media<'images'> &
+    cover620: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    CoverRectangle: Schema.Attribute.Media<'images'> &
+    coverrectangle: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    CoverSquareby2: Schema.Attribute.Media<'images'> &
+    coversquareby2: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    CoverSquareby3: Schema.Attribute.Media<'images'> &
+    coversquareby3: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    CoverSquareby3Full: Schema.Attribute.Media<'images'> &
+    coversquareby3full: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    CoverSupplierDefault: Schema.Attribute.Media<'images'> &
+    coversupplierdefault: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -435,14 +435,14 @@ export interface ApiCatalogueCatalogue extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Document: Schema.Attribute.Media<'files'> &
+    document: Schema.Attribute.Media<'files'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Gamme: Schema.Attribute.JSON &
+    gamme: Schema.Attribute.JSON &
       Schema.Attribute.Required &
       Schema.Attribute.CustomField<
         'plugin::multi-select.multi-select',
@@ -472,7 +472,7 @@ export interface ApiCatalogueCatalogue extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::catalogue.catalogue'
     >;
-    Marque: Schema.Attribute.Enumeration<
+    marque: Schema.Attribute.Enumeration<
       [
         'Ancor',
         'Apli-Agipa',
@@ -518,7 +518,7 @@ export interface ApiCatalogueCatalogue extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    Nomdufournisseur: Schema.Attribute.String &
+    nomdufournisseur: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
